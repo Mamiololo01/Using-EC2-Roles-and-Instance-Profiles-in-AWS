@@ -1,0 +1,11 @@
+You are responsible for ensuring your applications hosted in Amazon EC2 are able to securely access other AWS services. Credentials need to be rotated regularly to minimize the adverse impact of a security breach. You want to minimize the time it 
+takes to manage these credentials. AWS IAM roles provide the ability to automatically grant instances temporary credentials without the need for manual 
+management. IAM instance profiles provide the mechanism to attach IAM roles to EC2 instances.
+Logging In
+Please log in to the AWS console using the cloud_user credentials provided. Once inside the AWS account, make sure you are using us-east-1 (N. Virginia) 
+as the selected region.
+Note: When connecting to the bastion host and the web server, do so independently of each other. The bastion host is used for interacting with AWS services 
+via the CLI.
+Important Notes
+IMPORTANT: Your first task is to download and open the labreferences.txt file. Keep this file open throughout the entirety of the lab, as it contains the 
+names of S3 buckets you will need to include in multiple commands and scripts throughout the entire lab.
