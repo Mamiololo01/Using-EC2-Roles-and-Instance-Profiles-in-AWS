@@ -1,0 +1,41 @@
+Create a Trust Policy and Role Using the AWS CLI
+
+1. From the AWS Management Console, open the provisioned S3 bucket with s3bucketlookupfiles in its name and obtain the labreferences.txt file. This file serves as a reference containing the S3 bucket names used throughout the lab.
+2. Open a new terminal session.
+3. Log in to the EC2 Bastion Host instance using the provided lab credentials and set the AWS CLI region and output type.
+4. Create an IAM trust policy for an EC2 role.
+5. Create an IAM role named DEV_ROLE.
+6. Create an IAM policy named DevS3ReadAccess and define read-only access permissions for the provisioned S3 bucket with s3bucketdev in its name .
+
+
+Create Instance Profile and Attach Role to an EC2 Instance
+
+1. Attach the DevS3ReadAccess policy to the DEV role.
+2. Create the instance profile DEV_PROFILE and add the DEV_ROLE to it via the AWS CLI.
+3. Attach the DEV_PROFILE role to the EC2 Web Server instance.
+
+
+Test S3 Permissions via the AWS CLI
+
+1. Log in to the EC2 Web Server instance using the provided lab credentials.
+2. Verify that the Web Server instance is assuming the DEV_ROLE role.
+3. List the buckets in the account.
+4. Attempt to view the files in the s3bucketdev bucket.
+Mark Complete
+
+Create an IAM Policy and Role Using the AWS Management Console
+
+1. From the AWS Management Console, navigate to IAM > Policies.
+2. Create an IAM policy named ProdS3ReadAccess and define read-only access permissions for the provisioned S3 bucket with s3bucketprod in its name .
+3. Create a PROD_ROLE role and attach it to the ProdS3ReadAccess policy.
+
+
+Attach IAM Role to an EC2 Instance Using the AWS Management Console
+
+1. Navigate to EC2 > Instances.
+2. Attach the PROD_ROLE role to the Web Server instance.
+3. Open a terminal session and log in to the EC2 Web Server instance using the provided lab credentials.
+4. Verify that the Web Server instance is assuming the PROD_ROLE.
+5. List the buckets.
+6. Attempt to view the files in the s3bucketprod bucket.
+7. Attempt to view the files in the s3bucketsecret bucket.
